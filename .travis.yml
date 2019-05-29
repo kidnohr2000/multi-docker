@@ -14,7 +14,7 @@ after_success:
   - docker build -t kidnohr2000/multi-server ./server/Dockerfile ./server
   - docker build -t kidnohr2000/multi-worker ./worker/Dockerfile ./worker
   # Log in docker
-  - echo "DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Push Image
   - docker push kidnohr2000/multi-client
   - docker push kidnohr2000/multi-nginx
